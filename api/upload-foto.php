@@ -1,9 +1,17 @@
 <?php
+$protocol = $_POST["protocol"] ?? null;
+$photo = $_FILES["photo"] ?? null; 
 
-header("Content-Tyoe: application/json"); 
+#exibir protocolo
+echo "$protocol";
 
-{
-    "message": "Foto enviada com sucesso"
+#info. fotografia
+print_r($photo);
+
+#verificação de envio
+if (empty($protocol) || empty($photo)){
+    echo "Dados Obrigatórios não informados";
+    exit;
 }
 
 ?>
